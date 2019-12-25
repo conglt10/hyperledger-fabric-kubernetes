@@ -448,7 +448,7 @@ exit
 
 Create the `kubernetes/blockchain-ca_deploy.yaml` file with the following `Deployment` description:
 ```yaml
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: blockchain-ca
@@ -531,7 +531,7 @@ kubectl apply -f kubernetes/blockchain-ca_svc.yaml
 
 Create the file `kubernetes/blockchain-orderer_deploy.yaml` with the following `Deployment` description:
 ```yaml
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: blockchain-orderer
@@ -645,7 +645,7 @@ kubectl apply -f kubernetes/blockchain-orderer_svc.yaml
 - Create Org1MSP Peer1 Deployment  
 Create the file `kubernetes/blockchain-org1peer1_deploy.yaml` with the following `Deployment`:
 ```yaml
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: blockchain-org1peer1
@@ -769,7 +769,7 @@ spec:
 - Create Org1MSP Peer2 Deployment  
 Create the file `kubernetes/blockchain-org1peer2_deploy.yaml` with the following `Deployment`:
 ```yaml
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: blockchain-org1peer2
@@ -953,7 +953,7 @@ kubectl apply -f kubernetes/blockchain-org1peer2_svc.yaml
 - Create Org2MSP Peer1 Deployment  
 Create the file `kubernetes/blockchain-org2peer1_deploy.yaml` with the following `Deployment`:
 ```yaml
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: blockchain-org2peer1
@@ -1078,7 +1078,7 @@ spec:
 - Create Org2MSP Peer2 Deployment  
 Create the file `kubernetes/blockchain-org2peer2_deploy.yaml` the following `Deployment`:
 ```yaml
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: blockchain-org2peer2
@@ -1263,7 +1263,7 @@ kubectl apply -f kubernetes/blockchain-org2peer2_svc.yaml
 - Create Org3MSP Peer1 Deployment  
 Create the file `kubernetes/blockchain-org3peer1_deploy.yaml` with the following `Deployment`:
 ```yaml
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: blockchain-org3peer1
@@ -1388,7 +1388,7 @@ spec:
 - Create Org3MSP Peer2 Deployment  
 Create the file `kubernetes/blockchain-org3peer2_deploy.yaml` with the following `Deployment`:
 ```yaml
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: blockchain-org3peer2
@@ -1572,7 +1572,7 @@ kubectl apply -f kubernetes/blockchain-org3peer2_svc.yaml
 - Create Org4MSP Peer1 Deployment  
 Create the file `kubernetes/blockchain-org4peer1_deploy.yaml` the following `Deployment`:
 ```yaml
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: blockchain-org4peer1
@@ -1697,7 +1697,7 @@ spec:
 - Create Org4MSP Peer2 Deployment  
 Create the file `kubernetes/blockchain-org4peer2_deploy.yaml` with the following `Deployment`:
 ```yaml
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: blockchain-org4peer2
@@ -2121,7 +2121,7 @@ kubectl exec -it $pod -- peer channel update -f /fabric/Org4MSPanchors.tx -c cha
 
 Fabric Explorer needs a PostgreSQL Database as its backend. In order to deploy, we'll create the file `kubernetes/blockchain-explorer-db_deploy.yaml` with the following `Deployment`:
 ```yaml
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: blockchain-explorer-db
@@ -2435,7 +2435,7 @@ kubectl cp config/explorer/app/run.sh fabric-tools:/fabric/config/explorer/app/
 
 Now its time to create our Hyperledger Explorer application `Deployment` by creating the file `kubernetes/blockchain-explorer-app_deploy.yaml` as below:
 ```yaml
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: blockchain-explorer-app

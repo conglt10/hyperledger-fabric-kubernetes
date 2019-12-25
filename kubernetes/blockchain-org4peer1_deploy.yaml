@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: blockchain-org4peer1
@@ -19,7 +19,7 @@ spec:
 
       containers:
         - name: peer
-          image: hyperledger/fabric-peer:amd64-1.4.4
+          image: hyperledger/fabric-peer:latest
           command: ['sh', '-c', 'peer node start']
           env:
             - name: TZ
